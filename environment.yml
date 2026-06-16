@@ -1,0 +1,12 @@
+name: m2958-cloud
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pandas
+  - matplotlib
+  - jupyterlab
+  - ipykernel
+  - notebook
+  - boto3 # AWS SDK per Python, necessari per interactuar amb els serveis d'AWS com S3 i Lambda.

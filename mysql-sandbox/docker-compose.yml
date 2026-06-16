@@ -1,0 +1,29 @@
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: botigues
+      MYSQL_USER: uoc
+      MYSQL_PASSWORD: examplepass
+      MYSQL_ROOT_PASSWORD: rootpass
+    command: [ "--local-infile=1" ]
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+
+  python-app:
+    build: ./python-app
+    depends_on:
+      - mysql
+    volumes:
+      - ./python-app:/app
+      - ./python-app/data:/app/data
+      - ./python-app/source:/app/source
+
+volumes:
+  db:

@@ -1,0 +1,33 @@
+{
+    "cSpell.language": "ca,en",
+    "cSpell.words": [
+        "INFILE",
+        "VARCHAR"
+    ],
+    "editor.rulers": [
+        80
+    ],
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": "always"
+    },
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.markdownlint": "always"
+        }
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.wordBasedSuggestions": "off",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "explicit"
+        }
+    }
+}
