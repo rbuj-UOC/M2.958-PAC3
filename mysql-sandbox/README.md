@@ -2,26 +2,21 @@
 
 ## Connexió al contenidor d'aplicació
 
-El contenidor de l'aplicació i del client de MySQL no té cap procés que
-s'executi en primer pla, per la qual cosa no es manté en execució. Per iniciar
-el contenidor, primer haurem de determinar la xarxa del contenidor de MySQL i
-quin nom té el nom del contenidor de l'aplicació:
-
-La xarxa és `mysql-sandbox_default`:
+El fitxer `docker-compose.yml` defineix dos contenidors, un amb MySQL i un altre
+amb les eines de client de MySQL i Python. El contenidor de MySQL exposa el port
+3306, que és el port per defecte de MySQL. El contenidor d'aplicació es connecta
+al contenidor de MySQL mitjançant el nom del servei `mysql` definit al fitxer
+`docker-compose.yml`. Això permet que el contenidor d'aplicació accedeixi a la
+base de dades MySQL sense necessitat de conèixer l'adreça IP del contenidor de
+MySQL. Per iniciar els contenidors alhora, podem executar la comanda:
 
 ```bash
-docker network ls
+docker-compose up
 ```
 
-```text
-NETWORK ID     NAME                    DRIVER    SCOPE
-c1008688b77c   bridge                  bridge    local
-9c8ec509a463   host                    host      local
-5aa93fd3999b   mysql-sandbox_default   bridge    local
-b5421b1c96e3   none                    null      local
-```
-
-El nom del contenidor és `mysql-sandbox-python-app`:
+El nom del contenidor amb les eines de client és `mysql-sandbox-python-app-1` i
+el nom del contenidor de MySQL és `mysql-sandbox-mysql-1`. Per veure els
+contenidors en execució, podem executar la comanda:
 
 ```bash
 docker ps -a
@@ -29,18 +24,14 @@ docker ps -a
 
 ```text
 CONTAINER ID   IMAGE                                                                     COMMAND                  CREATED         STATUS                     PORTS                                         NAMES
-d8c54fbcab4b   mysql-sandbox-python-app                                                  "python3"                3 minutes ago   Exited (0) 3 minutes ago                                                 mysql-sandbox-python-app-1
-5b57330a793f   mysql:8.0                                                                 "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes               0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp   mysql-sandbox-mysql-1
+608d51034525   mysql-sandbox-python-app                                                           "bash -lc 'while tru…"   49 seconds ago   Up 48 seconds                                                            mysql-sandbox-python-app-1
+2afd45486380   mysql:8.0                                                                          "docker-entrypoint.s…"   10 minutes ago   Up 49 seconds              0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp   mysql-sandbox-mysql-1
 ```
 
-Amb aquestes dades ja podem iniciar el contenidor:
+Amb aquestes dades ja podem connectar amb el contenidor mysql-sandbox-python-app-1:
 
 ```bash
-docker run -it \
-  --network mysql-sandbox_default \
-  -v $(pwd)/python-app/data:/app/data \
-  -v $(pwd)/python-app/source:/app/source \
-  mysql-sandbox-python-app bash
+docker exec -it mysql-sandbox-python-app-1 bash
 ```
 
 ### Crear la base de dades, les taules i l'usuari
