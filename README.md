@@ -138,7 +138,7 @@ tauler de Docker Desktop.
 
 - miniconda
   - (macos) es recomana instal·lar-ho a través de [Homebrew](https://brew.sh/)
-  - (windows) es recomana utilitzar l'[instal·lador](<<https://www.anaconda.com/docs/getting-started/miniconda/install/overview>)
+  - (windows) es recomana utilitzar l'[instal·lador](https://www.anaconda.com/docs/getting-started/miniconda/install/overview)
 - Visual Studio Code: [instal·lar](https://code.visualstudio.com/)
 
 #### Creació de l'entorn virtual
