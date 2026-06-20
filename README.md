@@ -111,14 +111,6 @@ Una vegada oberta la carpeta del projecte a VS Code, clicarem a la icona
   <img src="./img/connect.avif" width="73px" style="border:solid 1px red;">
 </p>
 
-Aquesta ordre crearà un contenidor i instal·larà totes les dependències. Una
-vegada s'ha completat el procés de creació del contenidor, cal instal·lar les
-extensions recomanades per al projecte:
-
-<p align="center">
-  <img src="./img/extensions.avif" width="480px" style="border:solid 1px red;">
-</p>
-
 Un cop creat i activat l'entorn virtual, ja es pot executar el codi a VS Code.
 
 > [!IMPORTANT]
@@ -131,6 +123,17 @@ tauler de Docker Desktop.
 <p align="center">
   <img src="./img/disconnect.avif" width="511px" style="border:solid 1px red;">
 </p>
+
+#### Creació del Devcontainer
+
+No cal crear un devcontainer, ja que el projecte es pot executar i depurar a VS Code sense necessitat de contenidors. No obstant això, si voleu reproduir els passos per crear un devcontainer per a aquest projecte, podeu seguir els passos següents:
+
+1. Obre la paleta d'ordres (Ctrl+Shift+P) i selecciona `Dev Containers: Add Dev Container Configuration Files...`.
+2. Selecciona l'opció Àdd configuration files to workspace`.
+3. Selecciona l'opció `Miniconda` com a plantilla de devcontainer.
+4. No cal instal·lar dependències addicionals, per la qual cosa pots prémer el botó `Ok` per continuar.
+5. Es crearà un fitxer `devcontainer.json` a la carpeta `.devcontainer` del projecte. Pots obrir-lo i revisar-ne el contingut. En el fitxer `devcontainer.json`, pots afegir configuracions addicionals si cal, com ara extensions de VS Code que vulguis instal·lar automàticament dins del contenidor.
+6. Per iniciar el devcontainer, obriu la paleta d'ordres (Ctrl+Shift+P) i seleccioneu `Dev Containers: Reopen in Container`. Això obrirà el projecte en un contenidor de desenvolupament amb la configuració especificada al fitxer `devcontainer.json`.
 
 ### Opció 2: Conda
 
