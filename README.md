@@ -74,10 +74,10 @@ Quan aparegui la sol·licitud d'usuari i contrasenya:
 > El token es pot desar en un magatzem i es poden configurar els paràmetres predeterminats
 
 ```shell
-git config --global user.name "rbuj"
-git config --global user.email "robert.buj@gmail.com"
+git config --global user.name "USUARI"
+git config --global user.email "CORREU"
 git config --global credential.helper store
-git clone https://github.com/rbuj/M2.958-PAC2.git PAC2
+git clone https://github.com/USUARI/REPOSITORI.git DIRECTORI
 git config --global --list
 ```
 
