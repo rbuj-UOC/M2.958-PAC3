@@ -129,7 +129,7 @@ tauler de Docker Desktop.
 No cal crear un devcontainer, ja que el projecte es pot executar i depurar a VS Code sense necessitat de contenidors. No obstant això, si voleu reproduir els passos per crear un devcontainer per a aquest projecte, podeu seguir els passos següents:
 
 1. Obre la paleta d'ordres (Ctrl+Shift+P) i selecciona `Dev Containers: Add Dev Container Configuration Files...`.
-2. Selecciona l'opció Àdd configuration files to workspace`.
+2. Selecciona l'opció `Add configuration files to workspace`.
 3. Selecciona l'opció `Miniconda` com a plantilla de devcontainer.
 4. No cal instal·lar dependències addicionals, per la qual cosa pots prémer el botó `Ok` per continuar.
 5. Es crearà un fitxer `devcontainer.json` a la carpeta `.devcontainer` del projecte. Pots obrir-lo i revisar-ne el contingut. En el fitxer `devcontainer.json`, pots afegir configuracions addicionals si cal, com ara extensions de VS Code que vulguis instal·lar automàticament dins del contenidor.

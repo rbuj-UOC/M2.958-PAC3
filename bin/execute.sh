@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Script que executa un fitxer Jupyter Notebook i el converteix a HTML. També 
+# Script que executa un fitxer Jupyter Notebook i el converteix a HTML. També
 # pot generar un fitxer HTML amb les sortides de les cèl·les.
 
 # Comprova els arguments amb getopts "-f FILE_PATH", -h mostra ajuda

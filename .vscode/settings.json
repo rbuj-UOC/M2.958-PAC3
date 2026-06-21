@@ -1,5 +1,12 @@
 {
-    "cSpell.language": "ca,en",
+    "cSpell.language": "ca,es,en",
+    "cSpell.words": [
+        "eimtcld",
+        "pymysql",
+        "RMSE",
+        "uoclabs",
+        "VARCHAR"
+    ],
     "editor.rulers": [
         80
     ],
